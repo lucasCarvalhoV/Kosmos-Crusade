@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmn8eeaqgvlku"]
+
+[ext_resource type="Texture2D" uid="uid://biysmt6b3tlt3" path="res://sprites/stars_far.png" id="1_1ywoh"]
+[ext_resource type="Script" path="res://scripts/estrelas_caindo.gd" id="2_4hbx7"]
+[ext_resource type="Script" path="res://scripts/estrelas2.gd" id="3_4wsnj"]
+
+[node name="estrelas" type="Node"]
+
+[node name="estrelas_caindo" type="Sprite2D" parent="."]
+position = Vector2(0, -231)
+scale = Vector2(1.38889, 1.28333)
+texture = ExtResource("1_1ywoh")
+centered = false
+script = ExtResource("2_4hbx7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.39444, 1.25)
+texture = ExtResource("1_1ywoh")
+centered = false
+script = ExtResource("3_4wsnj")

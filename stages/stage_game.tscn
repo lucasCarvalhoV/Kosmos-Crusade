@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvw0e84usyxij"]
+
+[ext_resource type="PackedScene" uid="uid://dyehelek7qiff" path="res://scenes/nave.tscn" id="1_s5ru8"]
+[ext_resource type="PackedScene" uid="uid://dmn8eeaqgvlku" path="res://scenes/estrelas.tscn" id="2_wd77w"]
+
+[node name="world" type="Node"]
+
+[node name="nave" parent="." instance=ExtResource("1_s5ru8")]
+
+[node name="estrelas" parent="." instance=ExtResource("2_wd77w")]
