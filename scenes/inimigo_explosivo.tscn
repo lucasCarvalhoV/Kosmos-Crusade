@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhrh2k4xuq71x"]
+
+[ext_resource type="PackedScene" uid="uid://cec4de3numkid" path="res://scenes/inimigo.tscn" id="1_a01kd"]
+[ext_resource type="Script" path="res://scripts/inimigo_explosivo.gd" id="2_85mu3"]
+[ext_resource type="Texture2D" uid="uid://wmdg3nm4rujd" path="res://sprites/enemy_kamikaze.png" id="2_x6ra1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4ail"]
+size = Vector2(24, 32)
+
+[node name="inimigo_explosivo" instance=ExtResource("1_a01kd")]
+script = ExtResource("2_85mu3")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_x6ra1")
+
+[node name="corpo" parent="." index="1"]
+shape = SubResource("RectangleShape2D_c4ail")
