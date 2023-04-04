@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyp4x77g68sr5"]
+
+[ext_resource type="Script" path="res://scripts/Ovini_Inimigo.gd" id="1_mvwhw"]
+[ext_resource type="Texture2D" uid="uid://cpaybpmdf8waf" path="res://sprites/ovniAzul.png" id="2_biv8o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6k15"]
+radius = 39.1021
+height = 144.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1nmj6"]
+radius = 106.0
+height = 362.0
+
+[node name="Ovini_Inimigo" type="Area2D"]
+z_index = 15
+position = Vector2(704, 237)
+script = ExtResource("1_mvwhw")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_biv8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-297, -25)
+rotation = -0.174533
+shape = SubResource("CapsuleShape2D_f6k15")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(300, -25)
+rotation = 0.174533
+shape = SubResource("CapsuleShape2D_f6k15")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(2, -17)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1nmj6")

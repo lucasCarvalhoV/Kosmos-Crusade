@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://chg0xsmjjox34"]
+[gd_scene load_steps=3 format=3 uid="uid://chg0xsmjjox34"]
 
 [ext_resource type="Texture2D" uid="uid://y8ftlup65j8b" path="res://sprites/protagGraf.png" id="1_1gqev"]
+[ext_resource type="Script" path="res://scripts/nave_principal.gd" id="1_gfaoa"]
 
 [node name="nave_principal" type="Area2D"]
-position = Vector2(907, 545)
+position = Vector2(1120, 736)
+script = ExtResource("1_gfaoa")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="nave" type="Sprite2D" parent="."]
 texture = ExtResource("1_1gqev")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
