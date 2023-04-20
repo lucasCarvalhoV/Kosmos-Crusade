@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7aowbqgvwtqy"]
+
+[ext_resource type="Texture2D" uid="uid://cqadmc6rq40sf" path="res://sprites/rectangle.png" id="1_pc4hy"]
+[ext_resource type="Script" path="res://scripts/disparo.gd" id="2_dc7o1"]
+
+[sub_resource type="Animation" id="Animation_o4332"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xw8cy"]
+resource_name = "disparar"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5pjtt"]
+_data = {
+"RESET": SubResource("Animation_o4332"),
+"disparar": SubResource("Animation_xw8cy")
+}
+
+[node name="disparo" type="Sprite2D"]
+texture = ExtResource("1_pc4hy")
+script = ExtResource("2_dc7o1")
+
+[node name="disparar" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5pjtt")
+}
+
+[connection signal="animation_finished" from="disparar" to="." method="_on_disparar_animation_finished"]

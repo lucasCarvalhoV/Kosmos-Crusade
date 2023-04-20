@@ -1,18 +1,19 @@
-extends Area2D
+extends Sprite2D
 
 
-var speed= Vector2()
-var gravidade = 300
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_process(true)
+	
+	get_node("disparar").play("disparar")
+	_on_disparar_animation_finished("disparar")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	speed.y = gravidade * delta
-	translate(speed)
-	if position.y - 16 >= get_viewport_rect().size.y:
-		queue_free()
 	pass
+
+
+func _on_disparar_animation_finished(anim_name):
+	queue_free()
+	pass # Replace with function body.

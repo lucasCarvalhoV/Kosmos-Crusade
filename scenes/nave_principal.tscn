@@ -1,15 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://chg0xsmjjox34"]
+[gd_scene load_steps=3 format=3 uid="uid://cowi68egwt88b"]
 
-[ext_resource type="Texture2D" uid="uid://y8ftlup65j8b" path="res://sprites/protagGraf.png" id="1_1gqev"]
+[ext_resource type="Texture2D" uid="uid://cgdsv7erc4mpy" path="res://sprites/protagGraf (1).png" id="1_1gqev"]
 [ext_resource type="Script" path="res://scripts/nave_principal.gd" id="1_gfaoa"]
 
 [node name="nave_principal" type="Area2D"]
-position = Vector2(1120, 736)
+position = Vector2(1120, 718)
 script = ExtResource("1_gfaoa")
-metadata/_edit_group_ = true
 
 [node name="nave" type="Sprite2D" parent="."]
 texture = ExtResource("1_1gqev")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, -31)
 polygon = PackedVector2Array(43, 21, 37, 30, 18, 30, 27, 38, 31, 36, 46, 56, 44, 57, 34, 57, 23, 55, 17, 49, 5, 57, -2, 58, -8, 56, -18, 50, -25, 54, -39, 57, -47, 57, -41, 48, -29, 36, -21, 31, -38, 32, -46, 22, -15, 14, -12, 0, -1, -11, 9, 0, 10, 11)
+
+[node name="canhoes" type="Node2D" parent="."]
+
+[node name="esquerda" type="Marker2D" parent="canhoes"]
+position = Vector2(-16.5, -24)
+
+[node name="direita" type="Marker2D" parent="canhoes"]
+position = Vector2(16.5, -24)
