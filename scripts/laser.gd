@@ -1,7 +1,8 @@
 extends Area2D
 
-var mov = Vector2.ZERO
-var speed = 5
+var mov = Vector2()
+var speed = -700
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true)
@@ -10,13 +11,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var screen_size = get_viewport_rect().size
-	if position.x == 380 or position.x == screen_size.x-350:
-		speed = speed*(-1)
-	mov.x = speed+delta
+	mov.y = speed*delta
 	translate(mov)
-	position.x = clamp(position.x,380,screen_size.x-350)
-	
-	
-	
+	if (position.y < -30) or (position.y > (get_viewport_rect().size.y + 30)):
+		print("Apagando")
+		queue_free()
+		print("Apagador")
 	pass
+
+
+
+

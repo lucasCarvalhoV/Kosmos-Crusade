@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7eyrw0n62lwu"]
+
+[ext_resource type="Script" path="res://scripts/laser.gd" id="1_mhh5m"]
+[ext_resource type="Texture2D" uid="uid://cqadmc6rq40sf" path="res://sprites/rectangle.png" id="2_uoqhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt7gl"]
+
+[node name="laser" type="Area2D"]
+script = ExtResource("1_mhh5m")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uoqhx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tt7gl")

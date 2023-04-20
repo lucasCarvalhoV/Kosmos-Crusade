@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y8ftlup65j8b"
-path="res://.godot/imported/protagGraf.png-04b448b81ff9a8f0735a5410cd5c9fc3.ctex"
+uid="uid://cgdsv7erc4mpy"
+path="res://.godot/imported/protagGraf (1).png-2afb6f7ed0fcd256e199efc65c53add5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/protagGraf.png"
-dest_files=["res://.godot/imported/protagGraf.png-04b448b81ff9a8f0735a5410cd5c9fc3.ctex"]
+source_file="res://sprites/protagGraf (1).png"
+dest_files=["res://.godot/imported/protagGraf (1).png-2afb6f7ed0fcd256e199efc65c53add5.ctex"]
 
 [params]
 

@@ -1,8 +1,6 @@
-extends Area2D
+extends "res://scripts/laser.gd"
 
 
-var speed= Vector2()
-var gravidade = 300
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true)
@@ -11,8 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	speed.y = gravidade * delta
-	translate(speed)
-	if position.y - 16 >= get_viewport_rect().size.y:
-		queue_free()
+	speed = - 500
+	super._process(delta)
+	
 	pass

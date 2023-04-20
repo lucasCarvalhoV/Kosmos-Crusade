@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpiq61ci4pokj"]
+
+[ext_resource type="PackedScene" uid="uid://b7eyrw0n62lwu" path="res://scenes/laser.tscn" id="1_58mks"]
+[ext_resource type="Script" path="res://scripts/laser_nave.gd" id="2_y8nx0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h7nrp"]
+load_path = "res://.godot/imported/rectangle.png-030378d50cdbf736fdac59dd6a8ba7e8.ctex"
+
+[node name="laser_nave" instance=ExtResource("1_58mks")]
+script = ExtResource("2_y8nx0")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_h7nrp")
