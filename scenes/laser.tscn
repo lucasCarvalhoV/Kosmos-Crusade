@@ -10,7 +10,10 @@ script = ExtResource("1_mhh5m")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_uoqhx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tt7gl")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

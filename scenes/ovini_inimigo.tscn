@@ -13,9 +13,8 @@ height = 396.0
 
 [node name="Ovini_Inimigo" type="Area2D"]
 z_index = 15
-position = Vector2(1032, 294)
+position = Vector2(1094, 302)
 script = ExtResource("1_mvwhw")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-25, -49)
@@ -36,3 +35,14 @@ shape = SubResource("CapsuleShape2D_f6k15")
 position = Vector2(-22, -62)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1nmj6")
+
+[node name="Disparadores" type="Node2D" parent="."]
+
+[node name="laser_E" type="Marker2D" parent="Disparadores"]
+position = Vector2(-346, 22)
+
+[node name="laser_C" type="Marker2D" parent="Disparadores"]
+position = Vector2(-30, 54)
+
+[node name="laser_D" type="Marker2D" parent="Disparadores"]
+position = Vector2(290, 20)
