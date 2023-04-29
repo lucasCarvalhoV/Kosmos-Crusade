@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://djlqfm8odq4mt"]
+
+[ext_resource type="Script" path="res://scripts/laser_E.gd" id="1_j5r5q"]
+[ext_resource type="Texture2D" uid="uid://cqadmc6rq40sf" path="res://sprites/rectangle.png" id="1_njj1i"]
+[ext_resource type="Script" path="res://scripts/laser_D.gd" id="1_wrw4g"]
+[ext_resource type="Script" path="res://scripts/laser_C.gd" id="3_a4b71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgenv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oofam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3pxy"]
+
+[node name="laser_ovni" type="Node2D"]
+position = Vector2(271, 113)
+
+[node name="laser_E" type="Area2D" parent="."]
+position = Vector2(-28, -15)
+script = ExtResource("1_j5r5q")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laser_E"]
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_mgenv")
+
+[node name="Sprite2D" type="Sprite2D" parent="laser_E"]
+rotation = 0.785398
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_njj1i")
+
+[node name="laser_D" type="Area2D" parent="."]
+position = Vector2(22, -15)
+script = ExtResource("1_wrw4g")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="laser_D"]
+rotation = -0.785398
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_njj1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laser_D"]
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_oofam")
+
+[node name="laser_C" type="Area2D" parent="."]
+position = Vector2(-3, -5)
+script = ExtResource("3_a4b71")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laser_C"]
+shape = SubResource("RectangleShape2D_j3pxy")
+
+[node name="Sprite2D" type="Sprite2D" parent="laser_C"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_njj1i")

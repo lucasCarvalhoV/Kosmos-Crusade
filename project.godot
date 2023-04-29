@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.0", "GL Compatibility")
 boot_splash/use_filter=false
 config/icon="res://sprites/nave-espacial.png"
 
+[autoload]
+
+game="*res://scripts/game.gd"
+
 [display]
 
 window/size/viewport_width=1920
