@@ -5,7 +5,7 @@ var mov = Vector2.ZERO
 var speed = 5
 var intervalo = 0.8
 var ultimo_disparo = 0
-var vida = 10
+var vida = 60
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group(game.GRUPO_INIMIGO)
@@ -19,7 +19,7 @@ func _process(delta):
 	if position.x == 380 or position.x == screen_size.x-350:
 		speed = speed*(-1)
 	mov.x = speed+delta
-	translate(mov)
+	translate(mov)	
 	position.x = clamp(position.x,380,screen_size.x-350)
 	if ultimo_disparo <= 0:
 		disparo(get_node("Disparadores/laser_E"))
@@ -41,3 +41,9 @@ func sofre_dano(valor):
 	if vida <= 0:
 		queue_free()
 	pass
+	
+
+func _on_area_entered(area):
+	if area.is_in_group(game.JOGADOR):
+		area.setDurabilidade(area.durabilidade -10)
+	pass # Replace with function body.

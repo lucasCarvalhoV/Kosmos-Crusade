@@ -1,6 +1,8 @@
 extends Node
 
 const GRUPO_INIMIGO = "inimigos"
+
+const JOGADOR = "jogador"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

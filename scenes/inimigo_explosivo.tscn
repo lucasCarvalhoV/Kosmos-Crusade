@@ -56,3 +56,5 @@ shape = SubResource("RectangleShape2D_c4ail")
 libraries = {
 "": SubResource("AnimationLibrary_8t1sa")
 }
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

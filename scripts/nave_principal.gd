@@ -4,9 +4,14 @@ const scan_laser = preload("res://scenes/laser.tscn")
 var vel = 300
 var intervalo = 0.2
 var ultimo_disparo = 0
+
+var durabilidade = 10
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group(game.JOGADOR)
 	set_process(true)
+	
 	pass # Replace with function body.
 
 
@@ -35,8 +40,10 @@ func _process(delta):
 	position.x += mov.x * vel * delta
 	position.y += mov.y * vel * delta
 	position.x = clamp(position.x,45,view_size.x-45)
-	position.y = clamp(position.y,20,view_size.y-80)
+	position.y = clamp(position.y,45,view_size.y-40)
 	pass
+
+
 	
 func atirar(node):
 	var tiro = scan_laser.instantiate()
@@ -45,3 +52,10 @@ func atirar(node):
 	pass
 	
 
+func setDurabilidade(nova_durabilidade):
+	durabilidade = nova_durabilidade
+	if durabilidade <= 0:
+		queue_free()
+		
+	pass
+	

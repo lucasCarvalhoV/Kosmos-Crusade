@@ -53,3 +53,7 @@ shape = SubResource("RectangleShape2D_j3pxy")
 [node name="Sprite2D" type="Sprite2D" parent="laser_C"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_njj1i")
+
+[connection signal="area_entered" from="laser_E" to="laser_E" method="_on_area_entered"]
+[connection signal="area_entered" from="laser_D" to="laser_D" method="_on_area_entered"]
+[connection signal="area_entered" from="laser_C" to="laser_C" method="_on_area_entered"]
