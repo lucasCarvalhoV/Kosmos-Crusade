@@ -6,11 +6,14 @@ var speed = 5
 var intervalo = 0.8
 var ultimo_disparo = 0
 var vida = 60
+var disparos_dispersos = true
+signal segunda_fase
+signal terceira_fase
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group(game.GRUPO_INIMIGO)
 	set_process(true)
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,7 +24,7 @@ func _process(delta):
 	mov.x = speed+delta
 	translate(mov)	
 	position.x = clamp(position.x,380,screen_size.x-350)
-	if ultimo_disparo <= 0:
+	if ultimo_disparo <= 0 and disparos_dispersos:
 		disparo(get_node("Disparadores/laser_E"))
 		disparo(get_node("Disparadores/laser_C"))
 		disparo(get_node("Disparadores/laser_D"))
@@ -29,21 +32,22 @@ func _process(delta):
 
 	if ultimo_disparo > 0:
 		ultimo_disparo -= delta
-		
+
 func disparo(node):
 	var laser = scan_laser.instantiate()
 	laser.position = node.global_position
 	get_node("../").add_child(laser)
-	pass
-	
+
 func sofre_dano(valor):
 	vida -= valor
 	if vida <= 0:
 		queue_free()
-	pass
-	
+	elif vida == 20:
+		terceira_fase.emit()
+	elif vida == 40:
+		disparos_dispersos= false
+		segunda_fase.emit()
 
 func _on_area_entered(area):
 	if area.is_in_group(game.JOGADOR):
 		area.setDurabilidade(area.durabilidade -10)
-	pass # Replace with function body.

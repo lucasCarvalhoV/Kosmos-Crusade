@@ -17,3 +17,6 @@
 [node name="spawn_inimigos" parent="." instance=ExtResource("5_hfhj5")]
 
 [node name="HUD" parent="." instance=ExtResource("5_a7pmn")]
+
+[connection signal="segunda_fase" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_segunda_fase"]
+[connection signal="terceira_fase" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_terceira_fase"]
