@@ -4,18 +4,18 @@ const scan_laser = preload("res://scenes/laser.tscn")
 var vel = 300
 var intervalo = 0.2
 var ultimo_disparo = 0
+var durabilidade = game.PC_HP
 
-var durabilidade = 10
+signal hitted
 
-# Called when the node enters the scene tree for the first time.
+# Função chamada ao carregar elemeto
 func _ready():
 	add_to_group(game.JOGADOR)
 	set_process(true)
 	
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Função executada a cada frame 
 func _process(delta):
 	
 	var view_size = get_viewport_rect().size
@@ -54,8 +54,8 @@ func atirar(node):
 
 func setDurabilidade(nova_durabilidade):
 	durabilidade = nova_durabilidade
+	hitted.emit()
 	if durabilidade <= 0:
-		queue_free()
-		
+		queue_free()	
 	pass
 	

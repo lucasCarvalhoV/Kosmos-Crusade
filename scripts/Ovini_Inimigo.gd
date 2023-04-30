@@ -5,8 +5,10 @@ var mov = Vector2.ZERO
 var speed = 5
 var intervalo = 0.8
 var ultimo_disparo = 0
-var vida = 60
+var vida_total = game.BOSS_HP
+var vida = vida_total
 var disparos_dispersos = true
+signal hitted
 signal segunda_fase
 signal terceira_fase
 
@@ -40,11 +42,12 @@ func disparo(node):
 
 func sofre_dano(valor):
 	vida -= valor
+	hitted.emit()
 	if vida <= 0:
 		queue_free()
-	elif vida == 20:
+	elif vida == vida_total/3:
 		terceira_fase.emit()
-	elif vida == 40:
+	elif vida == vida_total/3 * 2:
 		disparos_dispersos= false
 		segunda_fase.emit()
 

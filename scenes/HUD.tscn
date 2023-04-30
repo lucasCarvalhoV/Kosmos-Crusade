@@ -1,18 +1,33 @@
-[gd_scene format=3 uid="uid://d3koh8vsj8ob0"]
+[gd_scene load_steps=2 format=3 uid="uid://d3koh8vsj8ob0"]
 
-[node name="HUD" type="CanvasLayer"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_g1ctv"]
 
-[node name="Control" type="Control" parent="."]
+[node name="HUD" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g1ctv")
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "texto hud "
-uppercase = true
+[node name="BOSS_HP" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.952941, 0, 0, 1)
+theme_override_constants/outline_size = 2
+
+[node name="PC_HP" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -52.0
+offset_right = 415.0
+offset_bottom = -25.0
+grow_vertical = 0
+show_percentage = false
