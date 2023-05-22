@@ -11,8 +11,6 @@ var speed = 100
 func _ready():
 	center = global_position;	
 	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
@@ -23,7 +21,7 @@ func _process(delta):
 	if(leftRotation):
 		angle += speed * delta
 	else:
-		angle += speed * delta
+		angle -= speed * delta
 		
 	radius += 0.1
 	speed += 0.1
