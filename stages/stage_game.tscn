@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvw0e84usyxij"]
+[gd_scene load_steps=7 format=3 uid="uid://cvw0e84usyxij"]
 
 [ext_resource type="PackedScene" uid="uid://dmn8eeaqgvlku" path="res://scenes/estrelas.tscn" id="2_wd77w"]
 [ext_resource type="PackedScene" uid="uid://cowi68egwt88b" path="res://scenes/nave_principal.tscn" id="3_fggei"]
 [ext_resource type="PackedScene" uid="uid://cyp4x77g68sr5" path="res://scenes/ovini_inimigo.tscn" id="4_xfq64"]
 [ext_resource type="PackedScene" uid="uid://c76v3fbew3o6" path="res://scenes/spawn_inimigos.tscn" id="5_hfhj5"]
 [ext_resource type="PackedScene" uid="uid://d3koh8vsj8ob0" path="res://scenes/HUD.tscn" id="5_mcglt"]
+[ext_resource type="PackedScene" uid="uid://u2cropxn8kdr" path="res://scenes/buraco_negro.tscn" id="6_4gv6h"]
 
 [node name="world" type="Node"]
 
@@ -17,6 +18,8 @@
 [node name="spawn_inimigos" parent="." instance=ExtResource("5_hfhj5")]
 
 [node name="HUD" parent="." instance=ExtResource("5_mcglt")]
+
+[node name="buraco_negro" parent="." instance=ExtResource("6_4gv6h")]
 
 [connection signal="hitted" from="Ovini_Inimigo" to="HUD" method="_on_ovini_inimigo_hitted"]
 [connection signal="segunda_fase" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_segunda_fase"]

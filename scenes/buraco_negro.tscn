@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://u2cropxn8kdr"]
+
+[ext_resource type="Script" path="res://scripts/buraco_negro.gd" id="1_v7y2y"]
+[ext_resource type="Texture2D" uid="uid://cqadmc6rq40sf" path="res://sprites/rectangle.png" id="2_fevnm"]
+
+[node name="buraco_negro" type="Area2D"]
+script = ExtResource("1_v7y2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(933, 536)
+scale = Vector2(9.25, 9.25)
+texture = ExtResource("2_fevnm")
+
+[node name="spawn_meteoro1" type="Marker2D" parent="."]
+position = Vector2(750, 352)
+
+[node name="spawn_meteoro2" type="Marker2D" parent="."]
+position = Vector2(738, 713)
+
+[node name="spawn_meteoro3" type="Marker2D" parent="."]
+position = Vector2(1115, 722)
+
+[node name="spawn_meteoro4" type="Marker2D" parent="."]
+position = Vector2(1119, 360)
