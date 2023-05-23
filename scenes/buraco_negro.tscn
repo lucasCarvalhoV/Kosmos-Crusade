@@ -7,18 +7,20 @@
 script = ExtResource("1_v7y2y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(933, 536)
-scale = Vector2(9.25, 9.25)
+position = Vector2(1009, 501)
+scale = Vector2(4.17187, 4.17187)
 texture = ExtResource("2_fevnm")
 
 [node name="spawn_meteoro1" type="Marker2D" parent="."]
-position = Vector2(750, 352)
+position = Vector2(936, 432)
 
 [node name="spawn_meteoro2" type="Marker2D" parent="."]
-position = Vector2(738, 713)
+position = Vector2(935, 575)
 
 [node name="spawn_meteoro3" type="Marker2D" parent="."]
-position = Vector2(1115, 722)
+position = Vector2(1081, 574)
 
 [node name="spawn_meteoro4" type="Marker2D" parent="."]
-position = Vector2(1119, 360)
+position = Vector2(1080, 430)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

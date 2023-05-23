@@ -20,6 +20,7 @@
 [node name="HUD" parent="." instance=ExtResource("5_mcglt")]
 
 [node name="buraco_negro" parent="." instance=ExtResource("6_4gv6h")]
+position = Vector2(59, -75)
 
 [connection signal="hitted" from="Ovini_Inimigo" to="HUD" method="_on_ovini_inimigo_hitted"]
 [connection signal="segunda_fase" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_segunda_fase"]
