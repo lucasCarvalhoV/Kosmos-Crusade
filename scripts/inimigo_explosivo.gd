@@ -1,5 +1,6 @@
 extends Area2D
 
+const bullet = preload("res://scripts/area_2d.tscn")
 var time = randf_range(0.5,1.5)
 var time_espera = 2.5
 var vida = 2
@@ -20,6 +21,9 @@ func _process(delta):
 		gravidade = 0
 		time_espera -= delta
 		$Sprite2D.play("minion")
+		var disparos = bullet.instantiate()
+		disparos.global_position = position
+		get_node("../").add_child(disparos)
 		if(time_espera <= 0):
 			time = randf_range(0.5,1.5)
 			time_espera = 1
