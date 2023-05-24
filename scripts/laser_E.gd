@@ -6,6 +6,7 @@ var speed = 500
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true)
+	$Sprite2D.play("enemy_bullet")
 	pass # Replace with function body.
 
 

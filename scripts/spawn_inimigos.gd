@@ -1,13 +1,13 @@
 extends Node2D
 
 const kamikaze = preload("res://scenes/inimigo_explosivo.tscn")
-var intervalo = 0.5
+var intervalo = 1.5
 var ultimo_spawn = 0
 var ativado = ""
 # Called when the node enters the scene tree for the first time.
 const delay = 200000
 func _ready():	
-	set_process(false)
+	set_process(true)
 	pass # Replace with function body.
 
 

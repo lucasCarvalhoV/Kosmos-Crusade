@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhrh2k4xuq71x"]
+[gd_scene load_steps=7 format=3 uid="uid://bhrh2k4xuq71x"]
 
-[ext_resource type="PackedScene" uid="uid://cec4de3numkid" path="res://scenes/inimigo.tscn" id="1_a01kd"]
+[ext_resource type="SpriteFrames" uid="uid://cp237sf6my8ae" path="res://sprites/minionGraf.res" id="2_31rgh"]
 [ext_resource type="Script" path="res://scripts/inimigo_explosivo.gd" id="2_85mu3"]
-[ext_resource type="Texture2D" uid="uid://wmdg3nm4rujd" path="res://sprites/enemy_kamikaze.png" id="2_x6ra1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4ail"]
-size = Vector2(24, 32)
+size = Vector2(36.6667, 33)
 
 [sub_resource type="Animation" id="Animation_gr2rp"]
 length = 0.001
@@ -43,16 +42,21 @@ _data = {
 "giro": SubResource("Animation_ji6qj")
 }
 
-[node name="inimigo_explosivo" instance=ExtResource("1_a01kd")]
+[node name="inimigo_explosivo" type="Area2D"]
 script = ExtResource("2_85mu3")
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_x6ra1")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("2_31rgh")
+animation = &"minion"
+frame_progress = 0.865867
 
-[node name="corpo" parent="." index="1"]
+[node name="corpo" type="CollisionShape2D" parent="."]
+position = Vector2(-9.53674e-07, 14.5)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_c4ail")
 
-[node name="giro" type="AnimationPlayer" parent="." index="2"]
+[node name="giro" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_8t1sa")
 }

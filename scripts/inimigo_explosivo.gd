@@ -18,11 +18,15 @@ func _process(delta):
 		mov.y = 0
 		gravidade = 0
 		time_espera -= delta
+		$Sprite2D.play("minion")
 		if(time_espera <= 0):
 			time = randf_range(0.5,1.5)
 			time_espera = 1
 			$giro.play("giro")
-	super._process(delta)
+	mov.y = gravidade * delta
+	translate(mov)
+	if position.y - 16 >= get_viewport_rect().size.y:
+		queue_free()
 	pass
 	
 func sofre_dano(valor):

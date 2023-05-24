@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7eyrw0n62lwu"]
 
 [ext_resource type="Script" path="res://scripts/laser.gd" id="1_mhh5m"]
-[ext_resource type="Texture2D" uid="uid://cqadmc6rq40sf" path="res://sprites/rectangle.png" id="2_uoqhx"]
+[ext_resource type="SpriteFrames" uid="uid://dnt81qnj5vxah" path="res://sprites/hero_bullet.res" id="2_67vc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt7gl"]
 
@@ -9,9 +9,10 @@
 script = ExtResource("1_mhh5m")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_uoqhx")
+sprite_frames = ExtResource("2_67vc6")
+animation = &"hero_bullet"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tt7gl")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://djlqfm8odq4mt"]
 
 [ext_resource type="Script" path="res://scripts/laser_E.gd" id="1_j5r5q"]
-[ext_resource type="Texture2D" uid="uid://cqadmc6rq40sf" path="res://sprites/rectangle.png" id="1_njj1i"]
 [ext_resource type="Script" path="res://scripts/laser_D.gd" id="1_wrw4g"]
+[ext_resource type="SpriteFrames" uid="uid://dohpxtv1mb0v5" path="res://sprites/enemy_bullet.res" id="2_frgwp"]
 [ext_resource type="Script" path="res://scripts/laser_C.gd" id="3_a4b71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgenv"]
@@ -23,20 +23,24 @@ metadata/_edit_group_ = true
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_mgenv")
 
-[node name="Sprite2D" type="Sprite2D" parent="laser_E"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="laser_E"]
 rotation = 0.785398
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_njj1i")
+sprite_frames = ExtResource("2_frgwp")
+animation = &"enemy_bullet"
+frame_progress = 0.446741
 
 [node name="laser_D" type="Area2D" parent="."]
 position = Vector2(22, -15)
 script = ExtResource("1_wrw4g")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="laser_D"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="laser_D"]
 rotation = -0.785398
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_njj1i")
+sprite_frames = ExtResource("2_frgwp")
+animation = &"enemy_bullet"
+frame_progress = 0.750813
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_D"]
 rotation = -0.785398
@@ -50,9 +54,11 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_C"]
 shape = SubResource("RectangleShape2D_j3pxy")
 
-[node name="Sprite2D" type="Sprite2D" parent="laser_C"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="laser_C"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_njj1i")
+sprite_frames = ExtResource("2_frgwp")
+animation = &"enemy_bullet"
+frame_progress = 0.747111
 
 [connection signal="area_entered" from="laser_E" to="laser_E" method="_on_area_entered"]
 [connection signal="area_entered" from="laser_D" to="laser_D" method="_on_area_entered"]
