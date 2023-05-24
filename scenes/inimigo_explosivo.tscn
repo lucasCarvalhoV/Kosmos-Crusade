@@ -49,7 +49,7 @@ script = ExtResource("2_85mu3")
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_31rgh")
 animation = &"minion"
-frame_progress = 0.865867
+frame_progress = 0.564823
 
 [node name="corpo" type="CollisionShape2D" parent="."]
 position = Vector2(-9.53674e-07, 14.5)

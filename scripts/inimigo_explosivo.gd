@@ -1,8 +1,10 @@
-extends "res://scripts/inimigo.gd"
+extends Area2D
 
 var time = randf_range(0.5,1.5)
 var time_espera = 2.5
 var vida = 2
+var gravidade = 500	
+var mov = Vector2()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group(game.GRUPO_INIMIGO)
@@ -12,7 +14,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	gravidade = 500	
 	time -= delta
 	if(time <= 0):
 		mov.y = 0
