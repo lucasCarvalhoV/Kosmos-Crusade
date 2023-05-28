@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://u2cropxn8kdr"]
+[gd_scene load_steps=4 format=3 uid="uid://u2cropxn8kdr"]
 
 [ext_resource type="Script" path="res://scripts/buraco_negro.gd" id="1_v7y2y"]
 [ext_resource type="Texture2D" uid="uid://cqadmc6rq40sf" path="res://sprites/rectangle.png" id="2_fevnm"]
@@ -6,16 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jbsh"]
 size = Vector2(137, 133)
 
-[sub_resource type="Animation" id="Animation_g65yi"]
-resource_name = "surgimento_buraco_negro"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tnam8"]
-_data = {
-"surgimento_buraco_negro": SubResource("Animation_g65yi")
-}
-
 [node name="buraco_negro" type="Area2D"]
 script = ExtResource("1_v7y2y")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1009, 501)
@@ -37,10 +30,5 @@ position = Vector2(1080, 430)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1008.5, 501.5)
 shape = SubResource("RectangleShape2D_7jbsh")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_tnam8")
-}
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

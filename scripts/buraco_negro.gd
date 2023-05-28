@@ -15,24 +15,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	if(meteoro1 == null and meteoro2 == null and meteoro3 == null and meteoro4 == null ):
+	if(meteoro1 == null and meteoro2 == null and meteoro3 == null and meteoro4 == null):
 		
 		meteoro1 = meteoro.instantiate();
 		meteoro2 = meteoro.instantiate();
 		meteoro3 = meteoro.instantiate();
 		meteoro4 = meteoro.instantiate();
 		
-		meteoro1.global_position = get_node("spawn_meteoro1").position;
-		meteoro2.global_position = get_node("spawn_meteoro2").position;
-		meteoro3.global_position = get_node("spawn_meteoro3").position;
-		meteoro4.global_position = get_node("spawn_meteoro4").position;
+		meteoro1.position = get_node("spawn_meteoro1").global_position;
+		meteoro2.position = get_node("spawn_meteoro2").global_position;
+		meteoro3.position = get_node("spawn_meteoro3").global_position;
+		meteoro4.position = get_node("spawn_meteoro4").global_position;
 		
 		get_node("../").add_child(meteoro1);
 		get_node("../").add_child(meteoro2);
 		get_node("../").add_child(meteoro3);
 		get_node("../").add_child(meteoro4);
-	
+		
 	
 	pass
 
@@ -40,4 +39,4 @@ func _process(delta):
 
 func _on_area_entered(area):
 	if area.is_in_group(game.JOGADOR):
-		area.setDurabilidade(area.durabilidade - 1000000)
+		area.setDurabilidade(area.durabilidade - 10)
