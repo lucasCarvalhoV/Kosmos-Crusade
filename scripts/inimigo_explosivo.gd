@@ -45,7 +45,7 @@ func _process(delta):
 func sofre_dano(valor):
 	vida -= valor
 	if vida <= 0:
-		destroied.emit(get_node("."))
+		destroied.emit(self)
 		queue_free()
 	pass
 		

@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpitpxekh7pts"]
+[gd_scene load_steps=6 format=3 uid="uid://bpitpxekh7pts"]
 
 [ext_resource type="Script" path="res://scripts/explosion.gd" id="1_xkrxd"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlnbv"]
+blend_mode = 1
+
 [sub_resource type="Gradient" id="Gradient_6u57h"]
-offsets = PackedFloat32Array(0, 0.488095, 0.785714, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 1, 0.124572, 0.0864943, 1, 1, 0.12549, 0.0862745, 0)
+offsets = PackedFloat32Array(0, 0.333333, 0.630952, 0.845238, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0.880517, 0.343802, 3.85046e-07, 1, 1, 0.12549, 0.0862745, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_e5rse"]
 gradient = SubResource("Gradient_6u57h")
@@ -27,8 +30,10 @@ color_ramp = SubResource("GradientTexture1D_e5rse")
 script = ExtResource("1_xkrxd")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_jlnbv")
 emitting = false
 amount = 30
 process_material = SubResource("ParticleProcessMaterial_lmc5w")
 one_shot = true
+speed_scale = 1.5
 explosiveness = 0.9
