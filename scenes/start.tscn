@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://l8a8p2rxe56v" path="res://fonts/m5x7.ttf" id="1_ub4mf"]
 [ext_resource type="Script" path="res://scripts/ItemList.gd" id="2_eu7br"]
-[ext_resource type="Texture2D" uid="uid://biysmt6b3tlt3" path="res://sprites/stars_far.png" id="2_tv74c"]
+[ext_resource type="PackedScene" uid="uid://dmn8eeaqgvlku" path="res://scenes/estrelas.tscn" id="3_aoc1i"]
 
 [node name="start" type="Control"]
 layout_mode = 3
@@ -41,19 +41,6 @@ theme_override_fonts/font = ExtResource("1_ub4mf")
 theme_override_font_sizes/font_size = 200
 text = "Kosmos Crusade"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(361.5, 303.5)
-scale = Vector2(4.00556, 3.33889)
-texture = ExtResource("2_tv74c")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(1022, 295)
-scale = Vector2(3.67778, 3.21389)
-texture = ExtResource("2_tv74c")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(1574.5, 288.75)
-scale = Vector2(3.78333, 3.18056)
-texture = ExtResource("2_tv74c")
+[node name="estrelas" parent="." instance=ExtResource("3_aoc1i")]
 
 [connection signal="item_selected" from="ItemList" to="ItemList" method="_on_item_selected"]

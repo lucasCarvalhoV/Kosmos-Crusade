@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxea4q880qmty"]
+
+[ext_resource type="Script" path="res://scripts/Enemy_DB.gd" id="1_fnrhm"]
+[ext_resource type="SpriteFrames" uid="uid://dohpxtv1mb0v5" path="res://sprites/enemy_bullet.res" id="2_c2bfx"]
+[ext_resource type="Script" path="res://scripts/Enemy_EB.gd" id="3_od72u"]
+[ext_resource type="Script" path="res://scripts/Enemy_EC.gd" id="4_vnwmd"]
+[ext_resource type="Script" path="res://scripts/Enemy_DC.gd" id="5_tm8eq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ljc31"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wvm8"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbidh"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_17j8m"]
+radius = 15.0
+
+[node name="laser_minion" type="Node2D"]
+position = Vector2(865, 415)
+
+[node name="laser_DB" type="Area2D" parent="."]
+position = Vector2(64, 47)
+script = ExtResource("1_fnrhm")
+metadata/_edit_group_ = true
+
+[node name="DB" type="AnimatedSprite2D" parent="laser_DB"]
+sprite_frames = ExtResource("2_c2bfx")
+animation = &"enemy_bullet"
+frame_progress = 0.210899
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laser_DB"]
+shape = SubResource("CircleShape2D_ljc31")
+
+[node name="laser_EB" type="Area2D" parent="."]
+position = Vector2(-66, 47)
+script = ExtResource("3_od72u")
+metadata/_edit_group_ = true
+
+[node name="EB" type="AnimatedSprite2D" parent="laser_EB"]
+sprite_frames = ExtResource("2_c2bfx")
+animation = &"enemy_bullet"
+frame_progress = 0.0595858
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laser_EB"]
+shape = SubResource("CircleShape2D_7wvm8")
+
+[node name="laser_EC" type="Area2D" parent="."]
+position = Vector2(-65, -49)
+script = ExtResource("4_vnwmd")
+metadata/_edit_group_ = true
+
+[node name="EC" type="AnimatedSprite2D" parent="laser_EC"]
+sprite_frames = ExtResource("2_c2bfx")
+animation = &"enemy_bullet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laser_EC"]
+shape = SubResource("CircleShape2D_cbidh")
+
+[node name="laser_DC" type="Area2D" parent="."]
+position = Vector2(66, -47)
+script = ExtResource("5_tm8eq")
+metadata/_edit_group_ = true
+
+[node name="DC" type="AnimatedSprite2D" parent="laser_DC"]
+sprite_frames = ExtResource("2_c2bfx")
+animation = &"enemy_bullet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laser_DC"]
+shape = SubResource("CircleShape2D_17j8m")
