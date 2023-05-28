@@ -52,6 +52,8 @@ func sofre_dano(valor):
 
 func _on_area_entered(area):
 	if area.is_in_group(game.JOGADOR):
-		area.setDurabilidade(area.durabilidade -1)
+		area.setDurabilidade(area.durabilidade -10)
+		destroied.emit(self)
+		get_tree().call_group("camera","tremer",10.0)
 		queue_free()
 	pass # Replace with function body.

@@ -23,4 +23,5 @@ func _process(delta):
 func _on_area_entered(area):
 	if area.is_in_group(game.JOGADOR):
 		area.setDurabilidade(area.durabilidade -1)
+		get_tree().call_group("camera","tremer",5.0)
 		queue_free()

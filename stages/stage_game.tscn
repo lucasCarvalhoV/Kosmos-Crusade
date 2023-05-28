@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvw0e84usyxij"]
+[gd_scene load_steps=11 format=3 uid="uid://cvw0e84usyxij"]
 
 [ext_resource type="Script" path="res://scripts/stage_game.gd" id="1_pdew1"]
 [ext_resource type="PackedScene" uid="uid://dmn8eeaqgvlku" path="res://scenes/estrelas.tscn" id="2_wd77w"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d3koh8vsj8ob0" path="res://scenes/HUD.tscn" id="5_mcglt"]
 [ext_resource type="FontFile" uid="uid://l8a8p2rxe56v" path="res://fonts/m5x7.ttf" id="8_8unea"]
 [ext_resource type="Script" path="res://scripts/Contagem.gd" id="8_un5jx"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="10_ht5mc"]
 
 [node name="world" type="Node"]
 script = ExtResource("1_pdew1")
@@ -57,6 +58,10 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="Contagem"]
 wait_time = 0.8
 autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
+anchor_mode = 0
+script = ExtResource("10_ht5mc")
 
 [connection signal="hitted" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_hitted"]
 [connection signal="hitted" from="Ovini_Inimigo" to="HUD" method="_on_ovini_inimigo_hitted"]
