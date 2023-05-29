@@ -7,28 +7,26 @@
 size = Vector2(137, 133)
 
 [node name="buraco_negro" type="Area2D"]
+position = Vector2(279, 4)
 script = ExtResource("1_v7y2y")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1009, 501)
 scale = Vector2(4.17187, 4.17187)
 texture = ExtResource("2_fevnm")
 
 [node name="spawn_meteoro1" type="Marker2D" parent="."]
-position = Vector2(936, 432)
+position = Vector2(-72, -71)
 
 [node name="spawn_meteoro2" type="Marker2D" parent="."]
-position = Vector2(935, 575)
+position = Vector2(-73, 72)
 
 [node name="spawn_meteoro3" type="Marker2D" parent="."]
-position = Vector2(1081, 574)
+position = Vector2(73, 71)
 
 [node name="spawn_meteoro4" type="Marker2D" parent="."]
-position = Vector2(1080, 430)
+position = Vector2(72, -73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1008.5, 501.5)
 shape = SubResource("RectangleShape2D_7jbsh")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

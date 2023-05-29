@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvw0e84usyxij"]
+[gd_scene load_steps=12 format=3 uid="uid://cvw0e84usyxij"]
 
 [ext_resource type="Script" path="res://scripts/stage_game.gd" id="1_pdew1"]
 [ext_resource type="PackedScene" uid="uid://dmn8eeaqgvlku" path="res://scenes/estrelas.tscn" id="2_wd77w"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://l8a8p2rxe56v" path="res://fonts/m5x7.ttf" id="8_8unea"]
 [ext_resource type="Script" path="res://scripts/Contagem.gd" id="8_un5jx"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="10_ht5mc"]
+[ext_resource type="Script" path="res://scripts/End_Game.gd" id="11_gahnh"]
 
 [node name="world" type="Node"]
 script = ExtResource("1_pdew1")
@@ -63,10 +64,46 @@ autostart = true
 anchor_mode = 0
 script = ExtResource("10_ht5mc")
 
+[node name="End_Game" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("11_gahnh")
+
+[node name="Label" type="Label" parent="End_Game"]
+offset_right = 1922.0
+offset_bottom = 1083.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_8unea")
+theme_override_font_sizes/font_size = 250
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PLay_again" type="Button" parent="End_Game"]
+offset_left = 794.0
+offset_top = 667.0
+offset_right = 1056.0
+offset_bottom = 752.0
+theme_override_fonts/font = ExtResource("8_8unea")
+theme_override_font_sizes/font_size = 50
+text = "Play Again"
+
+[node name="Exit" type="Button" parent="End_Game"]
+offset_left = 794.0
+offset_top = 770.0
+offset_right = 1056.0
+offset_bottom = 855.0
+theme_override_fonts/font = ExtResource("8_8unea")
+theme_override_font_sizes/font_size = 50
+text = "Exit Game
+"
+
 [connection signal="hitted" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_hitted"]
 [connection signal="hitted" from="Ovini_Inimigo" to="HUD" method="_on_ovini_inimigo_hitted"]
 [connection signal="segunda_fase" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_segunda_fase"]
 [connection signal="terceira_fase" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_terceira_fase"]
+[connection signal="game_over" from="nave_principal" to="End_Game" method="_on_nave_principal_game_over"]
 [connection signal="hitted" from="nave_principal" to="HUD" method="_on_nave_principal_hitted"]
 [connection signal="ready" from="nave_principal" to="HUD" method="_on_nave_principal_ready"]
 [connection signal="timeout" from="Contagem/Timer" to="Contagem" method="_on_timer_timeout"]
+[connection signal="pressed" from="End_Game/PLay_again" to="End_Game" method="_on_button_pressed"]
+[connection signal="pressed" from="End_Game/Exit" to="End_Game" method="_on_exit_pressed"]

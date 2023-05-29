@@ -35,5 +35,5 @@ emitting = false
 amount = 30
 process_material = SubResource("ParticleProcessMaterial_lmc5w")
 one_shot = true
-speed_scale = 1.5
+speed_scale = 1.8
 explosiveness = 0.9

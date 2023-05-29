@@ -6,6 +6,9 @@ var meteoro1;
 var meteoro2;
 var meteoro3;
 var meteoro4;
+var moved = false
+var mov = Vector2()
+const speed = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +18,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if !moved:
+		if position.y <= 500:
+			mov.y = delta*speed
+			translate(mov)
+			print(position.y)
+		if position.y >= 500:
+			moved = true
+		
 	if(meteoro1 == null and meteoro2 == null and meteoro3 == null and meteoro4 == null):
 		
 		meteoro1 = meteoro.instantiate();

@@ -14,7 +14,7 @@ var isThereWormHole = true;
 var inicio;
 
 func _ready():
-	center = global_position;
+	center = position;
 	leftRotation = center.x <= 1000
 	up = center.y > 500
 	pass 
@@ -50,5 +50,5 @@ func _process(delta):
 func _on_area_entered(area):
 	if area.is_in_group(game.JOGADOR):
 		area.setDurabilidade(area.durabilidade -1)
-		get_tree().call_group("camera","tremer",1)
+		get_tree().call_group("camera","tremer",5.0)
 		queue_free()

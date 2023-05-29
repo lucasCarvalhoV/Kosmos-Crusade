@@ -7,6 +7,7 @@ var ultimo_disparo = 0
 var durabilidade = game.PC_HP
 
 signal hitted
+signal game_over
 
 # Função chamada ao carregar elemeto
 func _ready():
@@ -56,6 +57,7 @@ func setDurabilidade(nova_durabilidade):
 	durabilidade = nova_durabilidade
 	hitted.emit()
 	if durabilidade <= 0:
+		game_over.emit()
 		queue_free()	
 	pass
 	
