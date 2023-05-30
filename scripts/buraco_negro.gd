@@ -9,6 +9,7 @@ var meteoro4;
 var moved = false
 var mov = Vector2()
 const speed = 500
+var intervalo = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,7 +43,13 @@ func _process(delta):
 		get_node("../").add_child(meteoro2);
 		get_node("../").add_child(meteoro3);
 		get_node("../").add_child(meteoro4);
-		
+	intervalo -= delta
+	if intervalo <= 0:
+		meteoro1.isThereWormHole = false
+		meteoro2.isThereWormHole = false
+		meteoro3.isThereWormHole = false
+		meteoro4.isThereWormHole = false
+		queue_free()
 	
 	pass
 

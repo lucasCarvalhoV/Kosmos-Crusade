@@ -52,3 +52,4 @@ func _on_area_entered(area):
 		area.setDurabilidade(area.durabilidade -1)
 		get_tree().call_group("camera","tremer",5.0)
 		queue_free()
+		

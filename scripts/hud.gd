@@ -36,9 +36,9 @@ func _on_nave_principal_ready():
 	
 
 func _on_nave_principal_hitted():
-	playerHP -= 1
+	#playerHP -= 1
 	pcHPbar.value  -= 1
 
 func _on_ovini_inimigo_hitted():
-	bossHP -= 1
+	#bossHP -= 1
 	bossHPbar.value -= 1

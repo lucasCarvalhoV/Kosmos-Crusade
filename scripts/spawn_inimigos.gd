@@ -38,7 +38,7 @@ func _on_ovini_inimigo_segunda_fase():
 
 
 
-func _on_ovini_inimigo_terceira_fase(node):
+func _on_ovini_inimigo_terceira_fase():
 		set_process(false)
 		
 func on_minion_destroied(inimigo):
