@@ -14,6 +14,7 @@ signal segunda_fase
 signal terceira_fase
 var ultimo_spawn = 0
 var fase_tres = false
+signal victory
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,7 +43,6 @@ func _process(delta):
 		ultimo_spawn -= delta
 		if (ultimo_spawn <= 0):
 			var buraco_negro = scan_buraco_negro.instantiate()
-			print(global_position)
 			buraco_negro.global_position = get_node("Disparadores/laser_C").global_position
 			get_node("../").add_child(buraco_negro)	
 			ultimo_spawn = 2
@@ -57,13 +57,15 @@ func sofre_dano(valor):
 	vida -= valor
 	hitted.emit()
 	if vida <= 0:
+		victory.emit()
 		queue_free()
 	elif vida <= vida_total/3:
 		terceira_fase.emit()
+		speed *= 3/2
 		fase_tres = true
 	elif vida == vida_total/3 * 2:
-		disparos_dispersos= false
-		speed = 8
+		#disparos_dispersos= false
+		speed *= 2
 		segunda_fase.emit()
 
 func _on_area_entered(area):

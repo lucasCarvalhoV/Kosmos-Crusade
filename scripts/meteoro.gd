@@ -31,7 +31,7 @@ func _process(delta):
 	speed += fatorVelocidade
 	
 	if(!isThereWormHole):
-		fatorVelocidade = 35
+		fatorVelocidade = 25
 		fatorRaio = 35
 	
 	if(radius == 654 && isThereWormHole):

@@ -1,19 +1,163 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxea4q880qmty"]
+[gd_scene load_steps=30 format=3 uid="uid://cxea4q880qmty"]
 
 [ext_resource type="Script" path="res://scripts/Enemy_DB.gd" id="1_fnrhm"]
-[ext_resource type="SpriteFrames" uid="uid://dohpxtv1mb0v5" path="res://sprites/enemy_bullet.res" id="2_c2bfx"]
+[ext_resource type="Texture2D" uid="uid://b05mqrreli8dg" path="res://sprites/enemy_bullet.png" id="2_dj1jx"]
 [ext_resource type="Script" path="res://scripts/Enemy_EB.gd" id="3_od72u"]
 [ext_resource type="Script" path="res://scripts/Enemy_EC.gd" id="4_vnwmd"]
 [ext_resource type="Script" path="res://scripts/Enemy_DC.gd" id="5_tm8eq"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb0e8"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2lcl"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkckp"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6e35"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3v65"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb0e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2lcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkckp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6e35")
+}],
+"loop": true,
+"name": &"enemy_bullet",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljc31"]
 radius = 16.0312
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c8vj"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t0qh"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew4de"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojrxd"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i1sal"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c8vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t0qh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew4de")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojrxd")
+}],
+"loop": true,
+"name": &"enemy_bullet",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wvm8"]
 radius = 15.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7ko1"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k43wh"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml1ld"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbd75"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l5yil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7ko1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k43wh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml1ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbd75")
+}],
+"loop": true,
+"name": &"enemy_bullet",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbidh"]
 radius = 15.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2mju"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dksl3"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqy6a"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgaj5"]
+atlas = ExtResource("2_dj1jx")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iehoo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2mju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dksl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqy6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgaj5")
+}],
+"loop": true,
+"name": &"enemy_bullet",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17j8m"]
 radius = 15.0
@@ -27,9 +171,8 @@ script = ExtResource("1_fnrhm")
 metadata/_edit_group_ = true
 
 [node name="DB" type="AnimatedSprite2D" parent="laser_DB"]
-sprite_frames = ExtResource("2_c2bfx")
+sprite_frames = SubResource("SpriteFrames_o3v65")
 animation = &"enemy_bullet"
-frame_progress = 0.210899
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_DB"]
 shape = SubResource("CircleShape2D_ljc31")
@@ -40,9 +183,8 @@ script = ExtResource("3_od72u")
 metadata/_edit_group_ = true
 
 [node name="EB" type="AnimatedSprite2D" parent="laser_EB"]
-sprite_frames = ExtResource("2_c2bfx")
+sprite_frames = SubResource("SpriteFrames_i1sal")
 animation = &"enemy_bullet"
-frame_progress = 0.0595858
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_EB"]
 shape = SubResource("CircleShape2D_7wvm8")
@@ -53,7 +195,7 @@ script = ExtResource("4_vnwmd")
 metadata/_edit_group_ = true
 
 [node name="EC" type="AnimatedSprite2D" parent="laser_EC"]
-sprite_frames = ExtResource("2_c2bfx")
+sprite_frames = SubResource("SpriteFrames_l5yil")
 animation = &"enemy_bullet"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_EC"]
@@ -65,7 +207,7 @@ script = ExtResource("5_tm8eq")
 metadata/_edit_group_ = true
 
 [node name="DC" type="AnimatedSprite2D" parent="laser_DC"]
-sprite_frames = ExtResource("2_c2bfx")
+sprite_frames = SubResource("SpriteFrames_iehoo")
 animation = &"enemy_bullet"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_DC"]

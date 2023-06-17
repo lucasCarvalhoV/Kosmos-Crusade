@@ -1,7 +1,7 @@
 extends Area2D
 
 const scan_laser = preload("res://scenes/laser.tscn")
-var vel = 300
+var vel = 400
 var intervalo = 0.2
 var ultimo_disparo = 0
 var durabilidade = game.PC_HP

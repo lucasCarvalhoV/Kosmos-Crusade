@@ -18,10 +18,10 @@ script = ExtResource("1_pdew1")
 [node name="PauseGame" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 12
+visible = false
 script = ExtResource("2_xf3mw")
 
 [node name="Pausa" type="Label" parent="PauseGame"]
-visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_colors/font_color = Color(0.168627, 0.886275, 0.882353, 1)
@@ -29,6 +29,24 @@ theme_override_fonts/font = ExtResource("8_8unea")
 theme_override_font_sizes/font_size = 180
 text = "Game Paused"
 horizontal_alignment = 1
+
+[node name="Main_menu" type="Button" parent="PauseGame"]
+offset_left = 789.0
+offset_top = 479.0
+offset_right = 1051.0
+offset_bottom = 564.0
+theme_override_fonts/font = ExtResource("8_8unea")
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+
+[node name="Exit" type="Button" parent="PauseGame"]
+offset_left = 789.0
+offset_top = 585.0
+offset_right = 1051.0
+offset_bottom = 670.0
+theme_override_fonts/font = ExtResource("8_8unea")
+theme_override_font_sizes/font_size = 50
+text = "Exit"
 
 [node name="estrelas" parent="." instance=ExtResource("2_wd77w")]
 
@@ -65,10 +83,19 @@ anchor_mode = 0
 script = ExtResource("10_ht5mc")
 
 [node name="End_Game" type="CanvasLayer" parent="."]
-visible = false
+process_mode = 3
 script = ExtResource("11_gahnh")
 
-[node name="Label" type="Label" parent="End_Game"]
+[node name="Game_over" type="Control" parent="End_Game"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="End_Game/Game_over"]
+layout_mode = 0
 offset_right = 1922.0
 offset_bottom = 1083.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
@@ -78,7 +105,8 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PLay_again" type="Button" parent="End_Game"]
+[node name="PLay_again" type="Button" parent="End_Game/Game_over"]
+layout_mode = 0
 offset_left = 794.0
 offset_top = 667.0
 offset_right = 1056.0
@@ -87,7 +115,8 @@ theme_override_fonts/font = ExtResource("8_8unea")
 theme_override_font_sizes/font_size = 50
 text = "Play Again"
 
-[node name="Exit" type="Button" parent="End_Game"]
+[node name="Exit" type="Button" parent="End_Game/Game_over"]
+layout_mode = 0
 offset_left = 794.0
 offset_top = 770.0
 offset_right = 1056.0
@@ -97,13 +126,47 @@ theme_override_font_sizes/font_size = 50
 text = "Exit Game
 "
 
+[node name="Victory" type="Control" parent="End_Game"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="End_Game/Victory"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("8_8unea")
+theme_override_font_sizes/font_size = 200
+text = "Victory!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main_Menu" type="Button" parent="End_Game/Victory"]
+layout_mode = 0
+offset_left = 806.0
+offset_top = 660.0
+offset_right = 1068.0
+offset_bottom = 745.0
+theme_override_fonts/font = ExtResource("8_8unea")
+theme_override_font_sizes/font_size = 50
+text = "Main Menu
+"
+
+[connection signal="pressed" from="PauseGame/Main_menu" to="PauseGame" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseGame/Exit" to="PauseGame" method="_on_exit_pressed"]
 [connection signal="hitted" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_hitted"]
 [connection signal="hitted" from="Ovini_Inimigo" to="HUD" method="_on_ovini_inimigo_hitted"]
 [connection signal="segunda_fase" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_segunda_fase"]
 [connection signal="terceira_fase" from="Ovini_Inimigo" to="spawn_inimigos" method="_on_ovini_inimigo_terceira_fase"]
+[connection signal="victory" from="Ovini_Inimigo" to="End_Game" method="_on_ovini_inimigo_victory"]
 [connection signal="game_over" from="nave_principal" to="End_Game" method="_on_nave_principal_game_over"]
 [connection signal="hitted" from="nave_principal" to="HUD" method="_on_nave_principal_hitted"]
 [connection signal="ready" from="nave_principal" to="HUD" method="_on_nave_principal_ready"]
 [connection signal="timeout" from="Contagem/Timer" to="Contagem" method="_on_timer_timeout"]
-[connection signal="pressed" from="End_Game/PLay_again" to="End_Game" method="_on_button_pressed"]
-[connection signal="pressed" from="End_Game/Exit" to="End_Game" method="_on_exit_pressed"]
+[connection signal="pressed" from="End_Game/Game_over/PLay_again" to="End_Game" method="_on_p_lay_again_pressed"]
+[connection signal="pressed" from="End_Game/Game_over/Exit" to="End_Game" method="_on_exit_pressed"]
+[connection signal="pressed" from="End_Game/Victory/Main_Menu" to="End_Game" method="_on_main_menu_pressed"]

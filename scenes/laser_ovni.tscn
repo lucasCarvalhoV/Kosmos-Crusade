@@ -1,13 +1,121 @@
-[gd_scene load_steps=8 format=3 uid="uid://djlqfm8odq4mt"]
+[gd_scene load_steps=23 format=3 uid="uid://djlqfm8odq4mt"]
 
 [ext_resource type="Script" path="res://scripts/laser_E.gd" id="1_j5r5q"]
 [ext_resource type="Script" path="res://scripts/laser_D.gd" id="1_wrw4g"]
-[ext_resource type="SpriteFrames" uid="uid://dohpxtv1mb0v5" path="res://sprites/enemy_bullet.res" id="2_frgwp"]
+[ext_resource type="Texture2D" uid="uid://b05mqrreli8dg" path="res://sprites/enemy_bullet.png" id="2_p85jr"]
 [ext_resource type="Script" path="res://scripts/laser_C.gd" id="3_a4b71"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ypd6"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd2w6"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfxds"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne2ca"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_valia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ypd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd2w6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfxds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne2ca")
+}],
+"loop": true,
+"name": &"enemy_bullet",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_grrsx"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l32p"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkggc"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esp52"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t32wl"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4a1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1l32p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkggc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esp52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t32wl")
+}],
+"loop": true,
+"name": &"enemy_bullet",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ik2nc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tylh"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnohw"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgkfs"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11n14"]
+atlas = ExtResource("2_p85jr")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5v5ls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tylh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnohw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgkfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11n14")
+}],
+"loop": true,
+"name": &"enemy_bullet",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rwudi"]
 
@@ -22,9 +130,8 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="AnimatedSprite2D" parent="laser_E"]
 rotation = 0.785398
 scale = Vector2(0.7, 0.7)
-sprite_frames = ExtResource("2_frgwp")
+sprite_frames = SubResource("SpriteFrames_valia")
 animation = &"enemy_bullet"
-frame_progress = 0.446741
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_E"]
 rotation = 0.785398
@@ -38,9 +145,8 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="AnimatedSprite2D" parent="laser_D"]
 rotation = -0.785398
 scale = Vector2(0.7, 0.7)
-sprite_frames = ExtResource("2_frgwp")
+sprite_frames = SubResource("SpriteFrames_v4a1i")
 animation = &"enemy_bullet"
-frame_progress = 0.750813
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_D"]
 rotation = -0.785398
@@ -53,9 +159,8 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="laser_C"]
 scale = Vector2(0.7, 0.7)
-sprite_frames = ExtResource("2_frgwp")
+sprite_frames = SubResource("SpriteFrames_5v5ls")
 animation = &"enemy_bullet"
-frame_progress = 0.747111
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="laser_C"]
 shape = SubResource("CircleShape2D_rwudi")

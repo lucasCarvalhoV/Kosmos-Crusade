@@ -48,4 +48,3 @@ position = Vector2(-30, 54)
 position = Vector2(290, 20)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="terceira_fase" from="." to="." method="_on_terceira_fase"]

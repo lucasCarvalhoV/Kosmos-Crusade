@@ -1,18 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://u2cropxn8kdr"]
+[gd_scene load_steps=7 format=3 uid="uid://u2cropxn8kdr"]
 
 [ext_resource type="Script" path="res://scripts/buraco_negro.gd" id="1_v7y2y"]
-[ext_resource type="Texture2D" uid="uid://cqadmc6rq40sf" path="res://sprites/rectangle.png" id="2_fevnm"]
+[ext_resource type="Texture2D" uid="uid://iddrsx5gw5kb" path="res://sprites/SpaceHole.png" id="2_um5ag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jbsh"]
 size = Vector2(137, 133)
+
+[sub_resource type="Animation" id="Animation_bcfty"]
+resource_name = "space hole"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 6.28319, 12.5664, 18.8496]
+}
+
+[sub_resource type="Animation" id="Animation_hrmxy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfsus"]
+_data = {
+"RESET": SubResource("Animation_hrmxy"),
+"space hole": SubResource("Animation_bcfty")
+}
 
 [node name="buraco_negro" type="Area2D"]
 position = Vector2(279, 4)
 script = ExtResource("1_v7y2y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4.17187, 4.17187)
-texture = ExtResource("2_fevnm")
+scale = Vector2(2, 2)
+texture = ExtResource("2_um5ag")
 
 [node name="spawn_meteoro1" type="Marker2D" parent="."]
 position = Vector2(-72, -71)
@@ -28,5 +65,10 @@ position = Vector2(72, -73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7jbsh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kfsus")
+}
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

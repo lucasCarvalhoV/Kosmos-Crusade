@@ -14,8 +14,18 @@ func _input(event):
 	if event.is_action_pressed("pause") && !event.is_echo():
 		get_tree().paused = !get_tree().paused
 		if get_tree().paused == true:
-			$Pausa.show()
+			show()
 		else:
-			$Pausa.hide()
+			hide()
 pass
 	
+
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://scenes/start.tscn")
+	pass # Replace with function body.
+
+
+func _on_exit_pressed():
+	get_tree().quit()
+	pass # Replace with function body.
