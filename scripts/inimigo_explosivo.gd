@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var boom_SFX:AudioStreamPlayer2D = $KamikazeSFX
+
 const bullet = preload("res://scenes/laser_minion.tscn")
 var time = randf_range(0.5,1.5)
 var time_espera = 2.5
@@ -48,11 +50,11 @@ func sofre_dano(valor):
 		destroied.emit(self)
 		queue_free()
 	pass
-		
 
 func _on_area_entered(area):
 	if area.is_in_group(game.JOGADOR):
-		area.setDurabilidade(area.durabilidade -10)
+		area.setDurabilidade(area.durabilidade -1)
+		boom_SFX.play()
 		destroied.emit(self)
 		get_tree().call_group("camera","tremer",10.0)
 		queue_free()

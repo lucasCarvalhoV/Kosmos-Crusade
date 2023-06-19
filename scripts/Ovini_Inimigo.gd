@@ -1,5 +1,9 @@
 extends Area2D
 
+@onready var hit_SFX:AudioStreamPlayer2D = $Hit_SFX
+@onready var transSegundaFase:AudioStreamPlayer2D = $TransicaoSegundaFaseA
+@onready var transTerceiraFase:AudioStreamPlayer2D = $TransicaoTerceiraFaseA
+
 const scan_laser = preload("res://scenes/laser_ovni.tscn")
 const scan_buraco_negro = preload("res://scenes/buraco_negro.tscn")
 var mov = Vector2.ZERO
@@ -28,7 +32,7 @@ func _process(delta):
 	if position.x == 380 or position.x == screen_size.x-350:
 		speed = speed*(-1)
 	mov.x = speed+delta
-	translate(mov)	
+	translate(mov)
 	position.x = clamp(position.x,380,screen_size.x-350)
 	if ultimo_disparo <= 0 and disparos_dispersos:
 		disparo(get_node("Disparadores/laser_E"))
@@ -55,21 +59,30 @@ func disparo(node):
 
 func sofre_dano(valor):
 	vida -= valor
+	hit_SFX.play()
 	hitted.emit()
-	if vida <= 0:
+	if vida == 0:
 		victory.emit()
 		queue_free()
-	elif vida <= vida_total/3:
+	elif vida == vida_total/3:
+		teceiraFaseSFXSelect()
 		terceira_fase.emit()
 		speed *= 3/2
 		fase_tres = true
 	elif vida == vida_total/3 * 2:
+		segundaFaseSFXSelect()
 		#disparos_dispersos= false
 		speed *= 2
 		segunda_fase.emit()
 
 func _on_area_entered(area):
 	if area.is_in_group(game.JOGADOR):
-		area.setDurabilidade(area.durabilidade -10)
-		
+		area.setDurabilidade(area.durabilidade -1)
 
+func segundaFaseSFXSelect():
+	transSegundaFase.play()
+	pass
+
+func teceiraFaseSFXSelect():
+	transTerceiraFase.play()
+	pass

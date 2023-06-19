@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7x1sib85cibw"
+path="res://.godot/imported/Hit nave mae A.wav-6fc37818e297c177b857440deb6cacbb.sample"
+
+[deps]
+
+source_file="res://sounds/effects/Hit nave mae A.wav"
+dest_files=["res://.godot/imported/Hit nave mae A.wav-6fc37818e297c177b857440deb6cacbb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://becm6j071nh0c"
+path="res://.godot/imported/Fase Segunda B.wav-2ecccf927b4ee0683686771713d6a8a3.sample"
+
+[deps]
+
+source_file="res://sounds/effects/Fase Segunda B.wav"
+dest_files=["res://.godot/imported/Fase Segunda B.wav-2ecccf927b4ee0683686771713d6a8a3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

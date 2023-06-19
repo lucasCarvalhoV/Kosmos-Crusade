@@ -1,5 +1,10 @@
 extends Area2D
 
+@onready var hitSFX_A:AudioStreamPlayer2D = $hitSFX_A
+@onready var hitSFX_B:AudioStreamPlayer2D = $hitSFX_B
+@onready var hitSFX_C:AudioStreamPlayer2D = $hitSFX_C
+@onready var hitSFX_D:AudioStreamPlayer2D = $hitSFX_D
+
 const scan_laser = preload("res://scenes/laser.tscn")
 var vel = 400
 var intervalo = 0.2
@@ -17,7 +22,7 @@ func _ready():
 	pass
 
 # Função executada a cada frame 
-func _process(delta):
+func _process(delta): 
 	
 	var view_size = get_viewport_rect().size
 	var mov = Vector2()
@@ -43,8 +48,6 @@ func _process(delta):
 	position.x = clamp(position.x,45,view_size.x-45)
 	position.y = clamp(position.y,45,view_size.y-40)
 	pass
-
-
 	
 func atirar(node):
 	var tiro = scan_laser.instantiate()
@@ -55,9 +58,22 @@ func atirar(node):
 
 func setDurabilidade(nova_durabilidade):
 	durabilidade = nova_durabilidade
+	hitSFXSelect();
 	hitted.emit()
 	if durabilidade <= 0:
 		game_over.emit()
-		queue_free()	
+		queue_free()
 	pass
 	
+func hitSFXSelect():
+	var chosenSFX = randi_range(0,3)
+	if chosenSFX == 0:
+		hitSFX_A.play()
+	if chosenSFX == 1:
+		hitSFX_B.play()
+	if chosenSFX == 2:
+		hitSFX_C.play()
+	if chosenSFX == 3:
+		hitSFX_D.play()
+	
+

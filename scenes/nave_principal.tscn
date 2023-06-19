@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cowi68egwt88b"]
+[gd_scene load_steps=7 format=3 uid="uid://cowi68egwt88b"]
 
 [ext_resource type="Texture2D" uid="uid://cgdsv7erc4mpy" path="res://sprites/protagGraf (1).png" id="1_1gqev"]
 [ext_resource type="Script" path="res://scripts/nave_principal.gd" id="1_gfaoa"]
+[ext_resource type="AudioStream" uid="uid://bvfopis1gakgs" path="res://sounds/effects/Hit nave A.wav" id="3_xo7h2"]
+[ext_resource type="AudioStream" uid="uid://0mbrrfiwxn8d" path="res://sounds/effects/Hit nave B.wav" id="4_0jvmc"]
+[ext_resource type="AudioStream" uid="uid://fr34j7ww652s" path="res://sounds/effects/Hit Nave C.wav" id="5_8tmib"]
+[ext_resource type="AudioStream" uid="uid://dt5w72p7v8a1d" path="res://sounds/effects/Hit nave D.wav" id="6_5aiiq"]
 
 [node name="nave_principal" type="Area2D"]
 position = Vector2(1120, 718)
@@ -21,3 +25,19 @@ position = Vector2(-16.5, -24)
 
 [node name="direita" type="Marker2D" parent="canhoes"]
 position = Vector2(16.5, -24)
+
+[node name="hitSFX_A" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xo7h2")
+volume_db = 2.0
+
+[node name="hitSFX_B" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0jvmc")
+volume_db = 2.0
+
+[node name="hitSFX_C" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8tmib")
+volume_db = 2.0
+
+[node name="hitSFX_D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_5aiiq")
+volume_db = 2.0

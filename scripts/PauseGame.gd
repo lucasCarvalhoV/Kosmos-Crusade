@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@onready var musicaFundo:AudioStreamPlayer = $"../MusicaFundo"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process_input(true)
@@ -14,8 +16,10 @@ func _input(event):
 	if event.is_action_pressed("pause") && !event.is_echo():
 		get_tree().paused = !get_tree().paused
 		if get_tree().paused == true:
+			musicaFundo.volume_db = -30
 			show()
 		else:
+			musicaFundo.volume_db = -20
 			hide()
 pass
 	

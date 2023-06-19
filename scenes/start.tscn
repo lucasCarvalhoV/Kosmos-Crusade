@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0r64d3vlixlf"]
+[gd_scene load_steps=5 format=3 uid="uid://uircsopyudcn"]
 
 [ext_resource type="FontFile" uid="uid://l8a8p2rxe56v" path="res://fonts/m5x7.ttf" id="1_ub4mf"]
 [ext_resource type="Script" path="res://scripts/ItemList.gd" id="2_eu7br"]
 [ext_resource type="PackedScene" uid="uid://dmn8eeaqgvlku" path="res://scenes/estrelas.tscn" id="3_aoc1i"]
+[ext_resource type="AudioStream" uid="uid://b645tg58bmo21" path="res://sounds/music/MenuPrincipal.wav" id="4_q2hcc"]
 
 [node name="start" type="Control"]
 process_mode = 3
@@ -43,5 +44,10 @@ theme_override_font_sizes/font_size = 200
 text = "Kosmos Crusade"
 
 [node name="estrelas" parent="." instance=ExtResource("3_aoc1i")]
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q2hcc")
+volume_db = 10.0
+autoplay = true
 
 [connection signal="item_selected" from="ItemList" to="ItemList" method="_on_item_selected"]

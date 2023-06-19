@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyp4x77g68sr5"]
+[gd_scene load_steps=8 format=3 uid="uid://cyp4x77g68sr5"]
 
 [ext_resource type="Script" path="res://scripts/Ovini_Inimigo.gd" id="1_mvwhw"]
 [ext_resource type="Texture2D" uid="uid://bombhycjuk3jq" path="res://sprites/ovniAzul.png" id="2_biv8o"]
+[ext_resource type="AudioStream" uid="uid://c7x1sib85cibw" path="res://sounds/effects/Hit nave mae A.wav" id="3_dilso"]
+[ext_resource type="AudioStream" uid="uid://becm6j071nh0c" path="res://sounds/effects/Fase Segunda B.wav" id="5_4ujry"]
+[ext_resource type="AudioStream" uid="uid://ld1urv65ls5y" path="res://sounds/effects/Fase Terceira A.wav" id="6_txq08"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6k15"]
 radius = 39.1021
@@ -46,5 +49,15 @@ position = Vector2(-30, 54)
 
 [node name="laser_D" type="Marker2D" parent="Disparadores"]
 position = Vector2(290, 20)
+
+[node name="Hit_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dilso")
+volume_db = 12.0
+
+[node name="TransicaoSegundaFaseA" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4ujry")
+
+[node name="TransicaoTerceiraFaseA" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_txq08")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
