@@ -1,3 +1,4 @@
+
 extends Area2D
 
 var center; # centro da circunferência
@@ -15,8 +16,6 @@ var inicio;
 
 func _ready():
 	center = position;
-	leftRotation = center.x <= 1000
-	up = center.y > 500
 	pass 
 
 func _process(delta):

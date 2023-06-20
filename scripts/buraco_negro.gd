@@ -1,3 +1,4 @@
+
 extends Node2D
 
 const meteoro = preload("res://scenes/meteoro.tscn");
@@ -39,6 +40,9 @@ func _process(delta):
 		meteoro2.position = get_node("spawn_meteoro2").global_position;
 		meteoro3.position = get_node("spawn_meteoro3").global_position;
 		meteoro4.position = get_node("spawn_meteoro4").global_position;
+		meteoro1.leftRotation = true
+		meteoro2.leftRotation = true
+		
 		
 		get_node("../").add_child(meteoro1);
 		get_node("../").add_child(meteoro2);

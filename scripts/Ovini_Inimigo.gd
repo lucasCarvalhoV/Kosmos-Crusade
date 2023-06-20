@@ -51,7 +51,7 @@ func _process(delta):
 			var buraco_negro = scan_buraco_negro.instantiate()
 			buraco_negro.global_position = get_node("Disparadores/laser_C").global_position
 			get_node("../").add_child(buraco_negro)	
-			ultimo_spawn = 2
+			ultimo_spawn = randi_range(0.5,2)
 
 
 func disparo(node):
