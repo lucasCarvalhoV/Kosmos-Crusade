@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvw0e84usyxij"]
+[gd_scene load_steps=18 format=3 uid="uid://cvw0e84usyxij"]
 
 [ext_resource type="Script" path="res://scripts/stage_game.gd" id="1_pdew1"]
 [ext_resource type="PackedScene" uid="uid://dmn8eeaqgvlku" path="res://scenes/estrelas.tscn" id="2_wd77w"]
@@ -13,7 +13,6 @@
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="10_ht5mc"]
 [ext_resource type="Script" path="res://scripts/End_Game.gd" id="11_gahnh"]
 [ext_resource type="AudioStream" uid="uid://c6mpwy0l5wjo2" path="res://sounds/effects/Áudio game over A.wav" id="13_r7tut"]
-[ext_resource type="AudioStream" uid="uid://d0qforynk8fv7" path="res://sounds/music/Vitória A.wav" id="13_rhcbu"]
 [ext_resource type="AudioStream" uid="uid://dajsonfnbwl63" path="res://sounds/music/Vitória B.wav" id="14_v1rp4"]
 [ext_resource type="AudioStream" uid="uid://72vhwtlqorfl" path="res://sounds/effects/Áudio game over B.wav" id="14_xth43"]
 [ext_resource type="AudioStream" uid="uid://c18am8dhi4gw1" path="res://sounds/effects/Áudio game over C.wav" id="15_e7n8h"]
@@ -21,6 +20,10 @@
 
 [node name="world" type="Node"]
 script = ExtResource("1_pdew1")
+
+[node name="TransicaoPrimeiraFaseA" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_me2dp")
+volume_db = 10.0
 
 [node name="MusicaFundo" type="AudioStreamPlayer" parent="."]
 process_mode = 3
@@ -169,10 +172,6 @@ theme_override_font_sizes/font_size = 50
 text = "Main Menu
 "
 
-[node name="vitoria_A" type="AudioStreamPlayer2D" parent="End_Game"]
-stream = ExtResource("13_rhcbu")
-volume_db = 24.0
-
 [node name="vitoria_B" type="AudioStreamPlayer2D" parent="End_Game"]
 stream = ExtResource("14_v1rp4")
 volume_db = 24.0
@@ -188,10 +187,6 @@ volume_db = 24.0
 [node name="gameover_SFX_C" type="AudioStreamPlayer2D" parent="End_Game"]
 stream = ExtResource("15_e7n8h")
 volume_db = 24.0
-
-[node name="TransicaoPrimeiraFaseA" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_me2dp")
-volume_db = 10.0
 
 [connection signal="pressed" from="PauseGame/Main_menu" to="PauseGame" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PauseGame/Exit" to="PauseGame" method="_on_exit_pressed"]

@@ -5,6 +5,8 @@ extends Area2D
 @onready var hitSFX_C:AudioStreamPlayer2D = $hitSFX_C
 @onready var hitSFX_D:AudioStreamPlayer2D = $hitSFX_D
 
+@onready var laserSFX:AudioStreamPlayer2D = $laserSFX
+
 const scan_laser = preload("res://scenes/laser.tscn")
 var vel = 400
 var intervalo = 0.2
@@ -52,6 +54,7 @@ func _process(delta):
 func atirar(node):
 	var tiro = scan_laser.instantiate()
 	tiro.position = node.global_position
+	laserSFX.play()
 	get_node("../").add_child(tiro)
 	pass
 	

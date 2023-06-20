@@ -6,7 +6,6 @@ extends CanvasLayer
 @onready var destroyed_SFX_B:AudioStreamPlayer2D = $gameover_SFX_B
 @onready var destroyed_SFX_C:AudioStreamPlayer2D = $gameover_SFX_C
 
-@onready var temaVitoriaA:AudioStreamPlayer2D = $vitoria_A
 @onready var temaVitoriaB:AudioStreamPlayer2D = $vitoria_B
 
 @onready var won_SFX_A:AudioStreamPlayer2D = $gameover_SFX_A
@@ -61,16 +60,10 @@ func gameoverSFXSelect():
 	var chosenSFX = randi_range(0,3)
 	if chosenSFX == 0:
 		destroyed_SFX_A.play()
-	if chosenSFX == 1:
+	elif chosenSFX == 1:
 		destroyed_SFX_B.play()
-	if chosenSFX == 2:
+	elif chosenSFX == 2:
 		destroyed_SFX_C.play()
-	if chosenSFX == 3:
-		destroyed_SFX_A.play()
 	
 func victorySFXSelect():
-	var chosenTema = randi_range(0,1)
-	if chosenTema  == 0:
-		temaVitoriaA.play()
-	if chosenTema  == 1:
-		temaVitoriaB.play()
+	temaVitoriaB.play()

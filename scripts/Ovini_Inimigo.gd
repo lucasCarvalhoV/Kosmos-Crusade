@@ -74,7 +74,6 @@ func sofre_dano(valor):
 		#disparos_dispersos= false
 		speed *= 2
 		segunda_fase.emit()
-
 func _on_area_entered(area):
 	if area.is_in_group(game.JOGADOR):
 		area.setDurabilidade(area.durabilidade -1)

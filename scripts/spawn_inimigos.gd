@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var boom_SFX:AudioStreamPlayer2D = $KamikazeSFX
+
 const kamikaze = preload("res://scenes/inimigo_explosivo.tscn")
 const scan_explosion = preload("res://scenes/explosion.tscn")
 var intervalo = 1.5
@@ -44,5 +46,6 @@ func _on_ovini_inimigo_terceira_fase():
 func on_minion_destroied(inimigo):
 	var explode = scan_explosion.instantiate()
 	explode.global_position = inimigo.global_position
+	boom_SFX.play()
 	add_child(explode)
 	pass
