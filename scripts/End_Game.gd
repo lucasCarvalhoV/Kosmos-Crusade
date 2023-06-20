@@ -57,7 +57,7 @@ func _on_main_menu_pressed():
 	pass # Replace with function body.
 
 func gameoverSFXSelect():
-	var chosenSFX = randi_range(0,3)
+	var chosenSFX = randi_range(0,2)
 	if chosenSFX == 0:
 		destroyed_SFX_A.play()
 	elif chosenSFX == 1:

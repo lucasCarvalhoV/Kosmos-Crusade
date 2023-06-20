@@ -1,11 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvw0e84usyxij"]
+[gd_scene load_steps=19 format=3 uid="uid://cvw0e84usyxij"]
 
 [ext_resource type="Script" path="res://scripts/stage_game.gd" id="1_pdew1"]
 [ext_resource type="PackedScene" uid="uid://dmn8eeaqgvlku" path="res://scenes/estrelas.tscn" id="2_wd77w"]
 [ext_resource type="AudioStream" uid="uid://calbh3yc8ph5b" path="res://sounds/music/backGrungMUsic.mp3" id="2_wwy7p"]
 [ext_resource type="Script" path="res://scripts/PauseGame.gd" id="2_xf3mw"]
 [ext_resource type="PackedScene" uid="uid://cowi68egwt88b" path="res://scenes/nave_principal.tscn" id="3_fggei"]
-[ext_resource type="PackedScene" uid="uid://cyp4x77g68sr5" path="res://scenes/ovini_inimigo.tscn" id="4_xfq64"]
+[ext_resource type="AudioStream" uid="uid://cat7mf53bfr71" path="res://sounds/effects/Fase Primeira B.wav" id="3_wvgoe"]
+[ext_resource type="PackedScene" uid="uid://c23d7vm0eecd1" path="res://scenes/ovini_inimigo.tscn" id="4_xfq64"]
 [ext_resource type="PackedScene" uid="uid://c76v3fbew3o6" path="res://scenes/spawn_inimigos.tscn" id="5_hfhj5"]
 [ext_resource type="PackedScene" uid="uid://d3koh8vsj8ob0" path="res://scenes/HUD.tscn" id="5_mcglt"]
 [ext_resource type="FontFile" uid="uid://l8a8p2rxe56v" path="res://fonts/m5x7.ttf" id="8_8unea"]
@@ -21,15 +22,19 @@
 [node name="world" type="Node"]
 script = ExtResource("1_pdew1")
 
-[node name="TransicaoPrimeiraFaseA" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_me2dp")
-volume_db = 10.0
-
 [node name="MusicaFundo" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("2_wwy7p")
-volume_db = -20.0
+volume_db = -15.0
 autoplay = true
+
+[node name="TransicaoPrimeiraFaseB" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wvgoe")
+volume_db = 10.0
+
+[node name="TransicaoPrimeiraFaseA" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_me2dp")
+volume_db = 10.0
 
 [node name="PauseGame" type="CanvasLayer" parent="."]
 process_mode = 3

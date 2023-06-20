@@ -1,8 +1,10 @@
 extends Area2D
 
 @onready var hit_SFX:AudioStreamPlayer2D = $Hit_SFX
-@onready var transSegundaFase:AudioStreamPlayer2D = $TransicaoSegundaFaseA
-@onready var transTerceiraFase:AudioStreamPlayer2D = $TransicaoTerceiraFaseA
+@onready var transSegundaFaseA:AudioStreamPlayer2D = $TransicaoSegundaFaseA
+@onready var transSegundaFaseB:AudioStreamPlayer2D = $TransicaoSegundaFaseB
+@onready var transTerceiraFaseA:AudioStreamPlayer2D = $TransicaoTerceiraFaseA
+@onready var transTerceiraFaseB:AudioStreamPlayer2D = $TransicaoTerceiraFaseB
 
 const scan_laser = preload("res://scenes/laser_ovni.tscn")
 const scan_buraco_negro = preload("res://scenes/buraco_negro.tscn")
@@ -79,9 +81,15 @@ func _on_area_entered(area):
 		area.setDurabilidade(area.durabilidade -1)
 
 func segundaFaseSFXSelect():
-	transSegundaFase.play()
+	if randi_range(0,1) == 0:
+		transSegundaFaseA.play()
+	else:
+		transSegundaFaseB.play()
 	pass
 
 func teceiraFaseSFXSelect():
-	transTerceiraFase.play()
+	if randi_range(0,1) == 0:
+		transTerceiraFaseA.play()
+	else:
+		transTerceiraFaseB.play()
 	pass
